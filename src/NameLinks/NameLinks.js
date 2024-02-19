@@ -8,7 +8,10 @@ function NameLinks() {
 		<div className="NameLinksContainer">
 			<text className="Name">Stefanos Despoti</text>
 			<div className="Links">
-				<a href="#" className="Link">
+				<a
+					href="https://www.instagram.com/stefanos_despoth/"
+					className="Link"
+				>
 					<RiInstagramLine />
 					<text>Instagram</text>
 				</a>

@@ -1,0 +1,16 @@
+.picBioContainer {
+	display: flex;
+	flex-direction: row;
+	width: 50%;
+	gap: 7em;
+	align-items: center;
+}
+
+.profilePic {
+	width: 232px;
+	border-radius: 50%;
+}
+
+.bio {
+	font-size: 25px;
+}
