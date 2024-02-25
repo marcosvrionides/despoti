@@ -6,11 +6,38 @@
 	align-items: center;
 }
 
+@media only screen and (max-width: 1300px) {
+	.picBioContainer {
+		width: 90%;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.picBioContainer {
+		flex-direction: column;
+		gap: 1em;
+		width: 90%;
+	}
+}
+
 .profilePic {
 	width: 232px;
+	aspect-ratio: 1;
+	object-fit: cover;
 	border-radius: 50%;
+}
+@media only screen and (max-width: 700px) {
+	.profilePic {
+		display: none;
+	}
 }
 
 .bio {
 	font-size: 25px;
+}
+
+@media only screen and (max-width: 700px) {
+	.bio {
+		text-align: center;
+	}
 }
