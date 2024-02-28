@@ -2,6 +2,9 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	background-color: rgba(255, 255, 255, 0.75);
+	border-radius: 1em;
+	padding: 0.5em 1em 0em 1em;
 }
 .Name {
 	font-size: 50px;
