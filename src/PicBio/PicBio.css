@@ -1,48 +1,66 @@
 .picBioContainer {
-	display: flex;
-	flex-direction: row;
-	width: 50%;
-	gap: 7em;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 	align-items: center;
+	min-height: calc(100vh - var(--header-height));
+	overflow: hidden;
 }
 
-@media only screen and (max-width: 1300px) {
-	.picBioContainer {
-		width: 90%;
-	}
+.picBioText {
+	padding: 3rem var(--gutter);
 }
 
-@media only screen and (max-width: 700px) {
-	.picBioContainer {
-		flex-direction: column;
-		gap: 1em;
-		width: 90%;
-	}
+.eyebrow {
+	margin: 0 0 1rem;
+	color: var(--accent);
+	font-size: 0.85rem;
+	font-weight: 600;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
 }
 
-.profilePic {
-	width: 232px;
-	aspect-ratio: 1;
-	object-fit: cover;
-	border-radius: 50%;
-	border: 2px solid white;
-}
-@media only screen and (max-width: 700px) {
-	.profilePic {
-		display: none;
-	}
+.heroName {
+	margin: 0 0 1.5rem;
+	font-family: var(--display-font);
+	font-size: clamp(4.5rem, 10vw, 9rem);
+	font-weight: 400;
+	letter-spacing: 0.02em;
+	line-height: 0.9;
 }
 
 .bio {
-	font-size: 25px;
-	background-color: rgba(255, 255, 255, 0.75);
-	padding: 0.5em;
-	border-radius: 1em;
-	font-weight: bold;
+	max-width: 34rem;
+	margin: 0 0 2rem;
+	color: var(--muted);
+	font-size: 1.1rem;
 }
 
-@media only screen and (max-width: 700px) {
-	.bio {
-		text-align: left;
+.heroActions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.profilePic {
+	display: block;
+	width: 100%;
+	height: 100%;
+	max-height: calc(100vh - var(--header-height));
+	object-fit: cover;
+	object-position: 40% 45%;
+}
+
+@media only screen and (max-width: 900px) {
+	.picBioContainer {
+		grid-template-columns: 1fr;
+		min-height: 0;
+	}
+	.profilePic {
+		order: -1;
+		height: 60vh;
+		max-height: none;
+	}
+	.picBioText {
+		padding-top: 2rem;
 	}
 }

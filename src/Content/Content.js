@@ -1,39 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Content.css";
 
 function Content() {
-	const [windowSize, setWindowSize] = useState({
-		width: window.innerWidth,
-		height: window.innerHeight,
-	});
-
-	useEffect(() => {
-		const handleResize = () => {
-			setWindowSize({
-				width: window.innerWidth,
-				height: window.innerHeight,
-			});
-		};
-
-		window.addEventListener("resize", handleResize);
-
-		return () => {
-			window.removeEventListener("resize", handleResize);
-		};
-	}, []);
-
 	return (
-		<div className="videosContainer">
-			<iframe
-				width={
-					windowSize.width > 1250 ? "1200" : windowSize.width * 0.9
-				}
-				height="630"
-				src="https://www.youtube.com/embed/5E3g9iqapSI?si=1MbOloNN6nZ6MkHp"
-				title="YouTube video player"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-				allowFullScreen
-			></iframe>
+		<div className="contentContainer">
+			<section id="listen">
+				<h2 className="sectionHeading">Listen</h2>
+				<iframe
+					className="spotify"
+					src="https://open.spotify.com/embed/artist/2YXmgxNhQZTruajG4jKKZu"
+					title="Stefanos Despoti on Spotify"
+					loading="lazy"
+					allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+				></iframe>
+			</section>
 		</div>
 	);
 }

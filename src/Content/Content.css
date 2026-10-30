@@ -1,3 +1,14 @@
-.videoContainer {
-	background-color: grey;
+.contentContainer {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: clamp(3rem, 8vw, 6rem) var(--gutter);
+}
+
+.spotify {
+	display: block;
+	width: 100%;
+	border: 0;
+	background-color: var(--surface);
+	height: 352px;
+	border-radius: 12px;
 }

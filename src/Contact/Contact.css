@@ -1,0 +1,19 @@
+.contactContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: clamp(3rem, 8vw, 5rem) var(--gutter) 2rem;
+	background-color: var(--surface);
+	border-top: 1px solid var(--border);
+	text-align: center;
+}
+
+.contactContainer .button {
+	overflow-wrap: anywhere;
+}
+
+.copyright {
+	margin: 3rem 0 0;
+	color: var(--muted);
+	font-size: 0.85rem;
+}

@@ -1,51 +1,98 @@
 .NameLinksContainer {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	box-sizing: border-box;
 	display: flex;
-	flex-direction: column;
+	justify-content: space-between;
 	align-items: center;
-	background-color: rgba(255, 255, 255, 0.75);
-	border-radius: 1em;
-	padding: 0.5em 1em 0em 1em;
-}
-.Name {
-	font-size: 50px;
-	font-weight: bold;
-	margin: 0;
-	letter-spacing: -0.025em;
+	height: var(--header-height);
+	padding: 0 var(--gutter);
+	background-color: rgba(14, 13, 12, 0.92);
+	border-bottom: 1px solid var(--border);
 }
 
-@media only screen and (max-width: 700px) {
-	.Name {
-		font-size: 30px;
-	}
+.Name {
+	color: var(--text);
+	font-family: var(--display-font);
+	font-size: 1.75rem;
+	letter-spacing: 0.04em;
+	text-decoration: none;
 }
 
 .Links {
 	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	width: 100%;
-	gap: 1em;
+	gap: 1.75rem;
 }
+
 .Link {
 	display: flex;
 	align-items: center;
-	flex-direction: row;
-	gap: 5px;
+	gap: 0.4em;
+	color: var(--muted);
 	text-decoration: none;
-	font-size: 20px;
-	font-weight: bold;
-	outline: none;
-	color: black;
+	transition: color 0.2s ease;
 }
-.Link:focus {
-	outline: none;
+
+.Link:hover {
+	color: var(--accent);
 }
-.Link:visited {
-	outline: none;
-	color: black;
+
+.LinksMenu {
+	display: none;
+	flex-direction: column;
+	justify-content: space-evenly;
+	width: 44px;
+	height: 44px;
+	padding: 8px;
+	background: none;
+	border: none;
+	cursor: pointer;
 }
-@media only screen and (max-width: 700px) {
+
+.bar {
+	display: block;
+	height: 2px;
+	background-color: var(--text);
+	transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.LinksMenu.open .bar1 {
+	transform: translateY(9px) rotate(45deg);
+}
+
+.LinksMenu.open .bar2 {
+	opacity: 0;
+}
+
+.LinksMenu.open .bar3 {
+	transform: translateY(-9px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+	.LinksMenu {
+		display: flex;
+	}
+	.Links {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		flex-direction: column;
+		gap: 0;
+		background-color: var(--bg);
+		border-bottom: 1px solid var(--border);
+	}
+	.Links.open {
+		display: flex;
+	}
 	.Link {
-		font-size: 18px;
+		justify-content: center;
+		padding: 0.9rem;
+		font-size: 1.1rem;
+	}
+	.Link + .Link {
+		border-top: 1px solid var(--border);
 	}
 }
